@@ -1,3 +1,5 @@
+**English** | [Español](README.es.md)
+
 # claude-arcade-statusline
 
 **An 8-bit arcade HUD for the [Claude Code](https://docs.claude.com/en/docs/claude-code) status line.**
@@ -14,6 +16,18 @@ cargo install --git https://github.com/smarriagac/claude-arcade-statusline
 arcade-statusline install
 # then restart Claude Code
 ```
+
+## Showcase: ASCII mode
+
+![The arcade HUD next to a colored ASCII-art character made with the converter](docs/screenshots/hud-showcase.png)
+
+Any image can become your character. This one was converted with
+`arcade-statusline sprite <your-image> --mode ascii --rows 12`, which draws one colored letter per
+cell, like a fastfetch logo. See [Create your own character](#create-your-own-character).
+
+> The character in this screenshot is fan art of Marco Rossi from *Metal Slug* (© SNK), generated
+> locally from the author's own image with the built-in converter. It is not distributed with this
+> project; bring your own image.
 
 ## Features
 
@@ -303,8 +317,21 @@ scripts/screenshots.sh
 It uses Menlo by default (macOS). Elsewhere, set `FONT_FAMILY` and `FONT_FILE` to another monospace
 font. The script header explains why it post-processes freeze's SVG instead of using its PNG output.
 
+The showcase image (`hud-showcase.png`) is optional, because its sprite is not in the repository.
+Make a sprite with `arcade-statusline sprite`, then capture only that scene:
+
+```sh
+SHOWCASE_SPRITE=<path> SCENES=hud-showcase scripts/screenshots.sh
+```
+
+| Variable | Effect |
+|----------|--------|
+| `SHOWCASE_SPRITE` | Sprite file for the `hud-showcase` scene, such as `~/.config/arcade-statusline/sprite.ansi`. Without it, `SCENES=hud-showcase` stops with `unknown scene` |
+| `SCENES` | Space-separated scene names to capture. Default: `hud hud-critical hud-compact sprite-ascii sprite-pixel install` |
+
 ## License
 
 [MIT](LICENSE) © Sebastian Marriaga
 
-Inspired by classic 90s arcade HUDs. Not affiliated with any game publisher.
+Inspired by classic 90s arcade HUDs. Not affiliated with any game publisher. *Metal Slug* is a
+trademark of SNK; it is named here only to credit the fan art in the showcase screenshot.

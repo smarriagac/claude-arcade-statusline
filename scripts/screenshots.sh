@@ -364,7 +364,18 @@ capture() {
   fi
 }
 
-for name in hud hud-critical hud-compact sprite-ascii sprite-pixel install; do
+# Optional showcase: the HUD with a locally generated sprite that is NOT part of
+# the repository (for example fan art made with `arcade-statusline sprite`).
+#   SHOWCASE_SPRITE=~/.config/arcade-statusline/sprite.ansi SCENES=hud-showcase scripts/screenshots.sh
+if [[ -n ${SHOWCASE_SPRITE:-} ]]; then
+  [[ -r $SHOWCASE_SPRITE ]] || die "SHOWCASE_SPRITE is not readable: $SHOWCASE_SPRITE"
+  scene hud-showcase "$q_bin --sprite $(printf %q "$SHOWCASE_SPRITE") <$(printf %q "$work/hud.json")"
+fi
+
+# SCENES limits the run to the listed scene names (space separated).
+read -r -a scenes <<<"${SCENES:-hud hud-critical hud-compact sprite-ascii sprite-pixel install}"
+for name in "${scenes[@]}"; do
+  [[ -f $work/$name.sh ]] || die "unknown scene: $name"
   capture "$name"
 done
 
