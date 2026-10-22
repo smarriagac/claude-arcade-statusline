@@ -1,0 +1,12 @@
+# Build output
+/target/
+
+# Editor and OS files
+*.swp
+*.swo
+.idea/
+.vscode/
+.DS_Store
+
+# Backups written by rustfmt
+**/*.rs.bk

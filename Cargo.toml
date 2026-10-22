@@ -1,0 +1,26 @@
+[package]
+name = "claude-arcade-statusline"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "8-bit arcade-style HUD for the Claude Code status line"
+license = "MIT"
+readme = "README.md"
+keywords = ["claude-code", "statusline", "terminal", "pixel-art", "hud"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "arcade-statusline"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif"] }
+serde = { version = "1.0.229", features = ["derive"] }
+# preserve_order keeps the user's settings.json key order when `install` rewrites it.
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
