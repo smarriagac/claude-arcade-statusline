@@ -3,14 +3,14 @@
 **An 8-bit arcade HUD for the [Claude Code](https://docs.claude.com/en/docs/claude-code) status line.**
 Your context window is a health bar, your rate limits are ammo, and session cost is your score.
 
-[![CI](https://github.com/<owner>/claude-arcade-statusline/actions/workflows/ci.yml/badge.svg)](https://github.com/<owner>/claude-arcade-statusline/actions/workflows/ci.yml)
+[![CI](https://github.com/smarriagac/claude-arcade-statusline/actions/workflows/ci.yml/badge.svg)](https://github.com/smarriagac/claude-arcade-statusline/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Rust 1.88+](https://img.shields.io/badge/rust-1.88%2B-orange.svg?logo=rust)](https://www.rust-lang.org)
 
 ![The arcade HUD next to the default pixel-art soldier](docs/screenshots/hud.png)
 
 ```sh
-cargo install --git https://github.com/<owner>/claude-arcade-statusline
+cargo install --git https://github.com/smarriagac/claude-arcade-statusline
 arcade-statusline install
 # then restart Claude Code
 ```
@@ -40,13 +40,13 @@ arcade-statusline install
 ### 2. Install the binary
 
 ```sh
-cargo install --git https://github.com/<owner>/claude-arcade-statusline
+cargo install --git https://github.com/smarriagac/claude-arcade-statusline
 ```
 
 Or from a clone:
 
 ```sh
-git clone https://github.com/<owner>/claude-arcade-statusline
+git clone https://github.com/smarriagac/claude-arcade-statusline
 cd claude-arcade-statusline
 cargo install --path .
 ```

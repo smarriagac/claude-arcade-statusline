@@ -5,6 +5,7 @@ edition = "2024"
 rust-version = "1.88"
 description = "8-bit arcade-style HUD for the Claude Code status line"
 license = "MIT"
+repository = "https://github.com/smarriagac/claude-arcade-statusline"
 readme = "README.md"
 keywords = ["claude-code", "statusline", "terminal", "pixel-art", "hud"]
 categories = ["command-line-utilities"]
